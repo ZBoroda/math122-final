@@ -3,11 +3,11 @@ math122-final
 
 Stuff to do:
 
-- [ ] Complete utility functions: - Julia and Ruth
+- [x] Complete utility functions: - Julia and Ruth
   - [x] Split ratings into testing and training data
-    - [ ] Normalize training data 
-  - [ ] Write a matrix compeltion function
-  - [ ] Write a function that calculates testing and training error (keeping in mind normalization)
+    - [x] Normalize training data 
+  - [x] Write a matrix compeltion function
+  - [x] Write a function that calculates testing and training error (keeping in mind normalization)
 - [ ] First aproach: Concatonate the two matricies and do matrix completion with multiple types of user history features
   - [ ] The Entire matrix of user features - Julia
   - [ ] The PCA of the features matrix - Zach and David
