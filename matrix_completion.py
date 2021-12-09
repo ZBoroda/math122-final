@@ -52,6 +52,7 @@ class MatrixCompletionizationizer:
               original_train_rows=np.array([]), original_train_cols=np.array([]), original_train_vals=np.array([]),
               original_row_id_to_ind=np.array([]), original_col_id_to_ind=np.array([])):
         """Train the model for a number of epochs"""
+        # retrieve original data (before appending columns)
         if original_train_rows.size == 0:
             original_train_rows = train_rows
         if original_train_cols.size == 0:
@@ -93,7 +94,7 @@ class MatrixCompletionizationizer:
             predicted_bounded = np.clip(predicted_unnormalized, 0, 10)
             train_loss = mse(original_train_vals,
                              predicted_bounded[original_train_rows_inds, original_train_cols_inds])
-            if print_loss and (epoch == 0 or (epoch+1) % (num_epochs/10) == 0):
+            if print_loss and (epoch == 0 or (epoch + 1) % (num_epochs / 10) == 0):
                 print("Train loss after epoch #{} is: {}".format(epoch + 1, train_loss))
             train_MSEs.append(train_loss)
         predicted_unnormalized = predicted.copy()
