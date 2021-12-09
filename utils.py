@@ -32,6 +32,10 @@ def PCA(dataframe, index_column,
     if graph_spectrum_fractions:
         plt.scatter(np.array(range(len(spectrum_fractions))),
                     np.array(spectrum_fractions), s=10, c='b', marker='o')
+        plt.title("Fraction of Spectrum accounted for by the top principal components")
+        plt.xlabel("Number of principal components")
+        plt.ylabel("Fraction of spectrum")
+        plt.show()
     if n_dimensions_to_keep == 0:
         fractions_greater_than_cutoff = np.asarray(spectrum_fractions)
         fractions_greater_than_cutoff[fractions_greater_than_cutoff < spectrum_fraction_threshold] = 1
